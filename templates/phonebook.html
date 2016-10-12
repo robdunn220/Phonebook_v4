@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" media="screen" title="no title">
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <ul class="topnav" id="myTopnav">
+      <li><a href="display_all">Contacts</a></li>
+      <li><a href="new_phonebook">Add Contact</a></li>
+      <li>
+        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+      </li>
+      <h1 class="navtitle">Phonebook</h1>
+    </ul>
+    <h1>{{title}}</h1>
+    <ul>
+      {% for phonebook in phonebook_list %}
+      <li><a href="/update_phonebook?id={{phonebook.id}}">{{phonebook.name}}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
