@@ -4,7 +4,7 @@ import pg
 db = pg.DB(dbname='phonebook')
 app = Flask('phonebook_v4')
 
-@app.route('/display_all')
+@app.route('/')
 def display_all():
     query = db.query('select * from phonebook')
     return render_template(
@@ -30,13 +30,13 @@ def submit_form():
         phone_number = phone_number,
         email=email
         )
-    return redirect('/display_all')
+    return redirect('/')
 
 @app.route('/update_phonebook')
 def update_phonebook_form():
     id = request.args.get('id')
     if not id:
-        return redirect('/display_all')
+        return redirect('/')
     sql = 'select * from phonebook where id = %s' % id
     print sql
     result_list = db.query(sql).namedresult()
@@ -60,7 +60,7 @@ def submit_update():
         'email': email
         }
         )
-    return redirect('/display_all')
+    return redirect('/')
 
 if __name__=='__main__':
     app.run(debug=True)
