@@ -2,23 +2,15 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<link rel="stylesheet" href="/static/css/styles.css" media="screen" title="no title">
-<ul class="topnav" id="myTopnav">
-  <li><a href="display_all">Contacts</a></li>
-  <li><a href="new_phonebook">Add Contact</a></li>
-  <li>
-    <a href="javascript:void(0);" onclick="display_all">&#9776;</a>
-  </li>
-</ul>
 <h1>All Entries</h1>
 <table border="1" width="100%">
-  <tr>
+  <tr class="titles">
     <th>Name</th>
     <th>Phone</th>
     <th>Email</th>
   </tr>
   {% for contact in phonebook_list %}
-  <tr>
+  <tr class="contacts">
     <td>{{contact.name}}</td>
     <td>{{contact.phone_number}}</td>
     <td>{{contact.email}}</td>

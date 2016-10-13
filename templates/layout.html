@@ -5,16 +5,15 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
   </head>
+  <ul class="topnav" id="myTopnav">
+    <li><a href="/">Contacts</a></li>
+    <li><a href="new_phonebook">Add Contacts</a></li>
+    <li>
+      <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+    </li>
+  </ul>
   <body>
     {% block body %}
-    <ul class="topnav" id="myTopnav">
-      <li><a href="display_all">Contacts</a></li>
-      <li><a href="new_phonebook">Add Contacts</a></li>
-      <li>
-        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-      </li>
-    </ul>
-
       <h1>Welcome!</h1>
     {% endblock %}
   </body>

@@ -89,3 +89,8 @@ p input {
   width: 20%;
   margin: 5px;
 }
+
+.titles th {
+  font-size: 30px;
+  line-height: 30px;
+}

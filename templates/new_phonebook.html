@@ -1,12 +1,5 @@
 {% extends "layout.html" %}
 {% block body %}
-<ul class="topnav" id="myTopnav">
-  <li><a href="display_all">Contacts</a></li>
-  <li><a href="new_phonebook">Add Contact</a></li>
-  <li>
-    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-  </li>
-</ul>
 <h1>New Contact</h1>
 <form action="/submit_new_phonebook" method="POST">
   <p>
