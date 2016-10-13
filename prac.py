@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import pg
 
 db = pg.DB(dbname='phonebook')
-app = Flask('MyApp')
+app = Flask('phonebook_v4')
 
 @app.route('/display_all')
 def display_all():
