@@ -1,24 +1,29 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="/static/css/styles.css" media="screen" title="no title">
-    <meta charset="utf-8">
-    <title>{{title}}</title>
-  </head>
-  <body>
-    <ul class="topnav" id="myTopnav">
-      <li><a href="display_all">Contacts</a></li>
-      <li><a href="new_phonebook">Add Contact</a></li>
-      <li>
-        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-      </li>
-      <h1 class="navtitle">Phonebook</h1>
-    </ul>
-    <h1>{{title}}</h1>
-    <ul>
-      {% for phonebook in phonebook_list %}
-      <li><a href="/update_phonebook?id={{phonebook.id}}">{{phonebook.name}}</a></li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+
+{% extends "layout.html" %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/css/styles.css" media="screen" title="no title">
+<ul class="topnav" id="myTopnav">
+  <li><a href="display_all">Contacts</a></li>
+  <li><a href="new_phonebook">Add Contact</a></li>
+  <li>
+    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+  </li>
+</ul>
+<h1>All Entries</h1>
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+  </tr>
+  {% for contact in phonebook_list %}
+  <tr>
+    <td>{{contact.name}}</td>
+    <td>{{contact.phone_number}}</td>
+    <td>{{contact.email}}</td>
+    <td><input type="button" name="name" value="update_phonebook"></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
